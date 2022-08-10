@@ -33,8 +33,8 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        // v5 supports image loaders out of box
-        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        // v5 supports image loaders out of box and mp3s I guess
+        test: /\.(?:ico|gif|png|jpg|jpeg|mp3)$/i,
         type: 'asset/resource',
       },
       {

@@ -1,31 +1,96 @@
-div {
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+* {
+  background-color: black;
+  color: white;
+}
 
+#App {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  height: 30%;
+  border-radius: 10px;
+  border-color: white;
+  font-weight: 800;
+  font-size: 40px;
+  text-align: center;
+  margin: 25px;
+}
+
+#pause-btn {
+  width: 50px;
+  height: 30px;
+  color: white;
+  border-radius: 10px;
+  border-color: white;
+  font-weight: 800;
+  font-size: 10px;
+  text-align: center;
+  margin: 25px;
+}
+
+button {
+  width: 350px;
+  height: 100px;
+  color: white;
+  border-radius: 10px;
+  border-color: white;
+  font-weight: 800;
+  font-size: 30px;
+  text-align: center;
+  margin: 25px;
+}
+
+
+
+#navbar {
+  justify-content: right;
+  align-items: right;
+  color:red
 }
 
 #theBagel {
-    width: 352px;
-    height: 350px;
-    background-image: url("https://res.cloudinary.com/juannncodes/image/upload/v1660091449/everythingbagel_xvakm1.png");
-    background-repeat: no-repeat;
-    animation-name: spin;
-    animation-duration: 11000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    /* transform: rotate(3deg); */
-     /* transform: rotate(0.3rad);/ */
-     /* transform: rotate(3grad); */
-     /* transform: rotate(.03turn);  */
-  }
+  width: 352px;
+  height: 350px;
+  background-image: url('https://res.cloudinary.com/juannncodes/image/upload/v1660091449/everythingbagel_xvakm1.png');
+  background-repeat: no-repeat;
+  animation-name: spin;
+  animation-duration: 20000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  margin: 5%;
+  /* transform: rotate(3deg); */
+  /* transform: rotate(0.3rad);/ */
+  /* transform: rotate(3grad); */
+  /* transform: rotate(.03turn);  */
+}
 
-  @keyframes spin {
-      from {
-          transform:rotate(0deg);
-      }
-      to {
-          transform:rotate(360deg);
-      }
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fade-in {
+  transition: opacity 1s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
