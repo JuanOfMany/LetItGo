@@ -52,9 +52,7 @@ export default function CherishedThought({ thought, setThoughts, thoughts }) {
 
   return (
     <div className="thought">
-      <button className="delete-thought" onClick={() => deleteThought()}>
-        X
-      </button>
+      <div className="button-container">
       {inEditMode ? (
         <button className="edit-thought" onClick={() => editThought()}>
           Edit Thought
@@ -67,6 +65,11 @@ export default function CherishedThought({ thought, setThoughts, thoughts }) {
           Edit Thought
         </button>
       )}
+      <button className="delete-thought" onClick={() => deleteThought()}>
+        X
+      </button>
+      </div>
+
 
       {inEditMode ? (
         <input onChange={(e) => setNewText(e.target.value)} type="text" />

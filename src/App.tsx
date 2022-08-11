@@ -11,19 +11,27 @@ export default function App () {
     const pause = function () { myAudio.pause() };
 
     useEffect(() => {
-        // myAudio.play();
+        myAudio.play();
         fetch('http://localhost:3000/thoughts')
         .then(response => response.json())
         .then((data) => setThoughts(data))
+
     }, []);
 
     return (
         <div id="App">
-            <button onClick={() => setShowCherished(true)}>Explore cherished thoughts.</button>
+
             {showCherished ? <CherishedThoughtsList thoughts={thoughts} setShowCherished={setShowCherished} setThoughts={setThoughts}/> : null}
-            <NavBar pause={pause}/>
-           <div id="theBagel"></div>
+
+           { <div id="theBagel">
+           <img id='bagel-img' src='https://res.cloudinary.com/juannncodes/image/upload/v1660091449/everythingbagel_xvakm1.png'></img>
+           </div>}
+
+           <h1>Look Into The Bagel...</h1>
            <CurrentThought id="currentThought" setThoughts={setThoughts} thoughts={thoughts}/>
+           <button onClick={() => setShowCherished(true)}>Explore cherished thoughts.</button>
+
+           <NavBar pause={pause}/>
         </div>
     )
 }

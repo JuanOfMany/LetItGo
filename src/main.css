@@ -43,6 +43,19 @@ input {
   margin: 25px;
 }
 
+.thought {
+  border-style: solid;
+  border-radius: 5px;
+  border-color: black;
+  border-width: 2px;
+  margin: 1%;
+  display:flex;
+  font-size: 50px;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 2%;
+}
+
 button {
   width: 350px;
   height: 100px;
@@ -54,12 +67,7 @@ button {
   margin: 25px;
 }
 
-.delete-thought {
-  width: 20px;
-  height: 20px;
-  font-size: 10px;
-  margin: 5px;
-}
+
 
 .cherished-container {
   z-index: 3;
@@ -70,8 +78,23 @@ button {
   bottom: 0;
 }
 
+.button-container{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  justify-content: right;
+}
+
 .edit-thought {
-  width: 100px;
+  width: 150px;
+  height: 30px;
+  font-size: 15px;
+  margin: 5px;
+}
+
+.delete-thought {
+  width: 20px;
   height: 20px;
   font-size: 10px;
   margin: 5px;
@@ -87,25 +110,25 @@ button {
   width:100%;
 }
 
-.thought {
-  border-style: solid;
-  border-radius: 5px;
-  border-color: black;
-  border-width: 2px;
-  width: 50%;
-  margin: 1%;
-  flex: 0 0 3%;
 
+
+#currentThought {
+  width: 750px;
 }
-
-
 
 #navbar {
   justify-content: right;
   align-items: right;
 }
 
+#bagel-img {
+  width: 528px;
+  height:525px;
+  border-radius: 50%;
+}
+
 #theBagel {
+  border-radius: 50%;
   width: 352px;
   height: 350px;
   background-image: url('https://res.cloudinary.com/juannncodes/image/upload/v1660091449/everythingbagel_xvakm1.png');
@@ -114,7 +137,7 @@ button {
   animation-duration: 20000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  margin: 5%;
+  margin: 10%;
   /* transform: rotate(3deg); */
   /* transform: rotate(0.3rad);/ */
   /* transform: rotate(3grad); */

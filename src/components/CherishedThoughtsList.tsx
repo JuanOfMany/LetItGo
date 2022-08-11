@@ -7,7 +7,6 @@ export default function CherishedThoughtsList({ thoughts, setShowCherished, setT
   ))
   return (
     <div className="cherished-container">
-      <button onClick={() => setThoughts([])}>EMPTY THOUGHTS</button>
       <button onClick={() => setShowCherished(false)}>Add a Thought</button>
       <div className="cherished-list">{thoughtList}</div>
     </div>
