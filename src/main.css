@@ -1,6 +1,6 @@
 * {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 #App {
@@ -19,20 +19,22 @@ div {
 }
 
 input {
-  width: 100%;
+  width: 90%;
   height: 30%;
-  border-radius: 10px;
-  border-color: white;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  /* border-bottom: white; */
   font-weight: 800;
-  font-size: 40px;
+  font-size: 20px;
   text-align: center;
   margin: 25px;
+  outline-width: 0;
 }
 
 #pause-btn {
   width: 50px;
   height: 30px;
-  color: white;
   border-radius: 10px;
   border-color: white;
   font-weight: 800;
@@ -44,7 +46,6 @@ input {
 button {
   width: 350px;
   height: 100px;
-  color: white;
   border-radius: 10px;
   border-color: white;
   font-weight: 800;
@@ -53,12 +54,55 @@ button {
   margin: 25px;
 }
 
+.delete-thought {
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+  margin: 5px;
+}
+
+.cherished-container {
+  z-index: 3;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.edit-thought {
+  width: 100px;
+  height: 20px;
+  font-size: 10px;
+  margin: 5px;
+}
+
+.cherished-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-height:80%;
+  overflow-y: auto;
+  width:100%;
+}
+
+.thought {
+  border-style: solid;
+  border-radius: 5px;
+  border-color: black;
+  border-width: 2px;
+  width: 50%;
+  margin: 1%;
+  flex: 0 0 3%;
+
+}
+
 
 
 #navbar {
   justify-content: right;
   align-items: right;
-  color:red
 }
 
 #theBagel {
