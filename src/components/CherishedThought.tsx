@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import axios from 'axios';
+axios.defaults.baseURL = 'http://localhost:3000';
 
 type thoughtType = {
   text: string
@@ -8,43 +10,44 @@ export default function CherishedThought({ thought, setThoughts, thoughts }) {
   const [inEditMode, setInEditMode] = useState(false)
   const [newText, setNewText] = useState('')
 
-  const deleteThought = function () {
-    fetch('http://localhost:3000/thoughts', {
+  const config = {
+    method: 'get',
+    url: '/thoughts'
+}
+
+  const deleteThought = async function () {
+    return await fetch('http://localhost:3000/thoughts', {
       method: 'DELETE',
       credentials: 'same-origin', // include, *same-origin, omit
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ id: thought._id }),
-    }).then(
-      fetch('http://localhost:3000/thoughts')
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data)
-          setThoughts(data)
-        })
-    )
+    })
+    .then(() => axios(config)
+    .then(function (response) {
+      setThoughts(response.data)
+    })
+  )
   }
 
-  const editThought = function () {
-    fetch('http://localhost:3000/thoughts', {
+  const editThought = async function () {
+    return await fetch('http://localhost:3000/thoughts', {
       method: 'PUT',
       credentials: 'same-origin', // include, *same-origin, omit
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ id: thought._id, text: newText }),
+      body: JSON.stringify({ id: thought._id, text: newText })
     })
-      .then(
-        fetch('http://localhost:3000/thoughts')
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data)
-            setThoughts(data)
-          })
+      .then(() => axios(config)
+        .then(function (response) {
+          setThoughts(response.data)
+        })
       )
-      .then(() => setInEditMode(false))
-      .then(() => console.log(thoughts))
+      .then(() => {
+        setInEditMode(false)
+      })
   }
 
   return (
