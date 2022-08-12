@@ -1,6 +1,6 @@
 import react, { useState } from 'react'
 import axios from 'axios'
-axios.defaults.baseURL = 'http://localhost:3000'
+axios.defaults.baseURL = 'http://172.31.29.117:3000'
 
 export default function CurrentThought({ setThoughts, thoughts }) {
   const [fadeThought, setFadeThought] = useState({
@@ -22,7 +22,7 @@ export default function CurrentThought({ setThoughts, thoughts }) {
   }
 
   const cherishThought = function () {
-    fetch('http://localhost:3000/thoughts', {
+    fetch('http://172.31.29.117:3000/thoughts', {
       method: 'POST',
       credentials: 'same-origin', // include, *same-origin, omit
       headers: {

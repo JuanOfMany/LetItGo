@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'http://172.31.29.117:3000';
 
 type thoughtType = {
   text: string
@@ -16,7 +16,7 @@ export default function CherishedThought({ thought, setThoughts, thoughts }) {
 }
 
   const deleteThought = async function () {
-    return await fetch('http://localhost:3000/thoughts', {
+    return await fetch('http://172.31.29.117:3000/thoughts', {
       method: 'DELETE',
       credentials: 'same-origin', // include, *same-origin, omit
       headers: {
@@ -32,7 +32,7 @@ export default function CherishedThought({ thought, setThoughts, thoughts }) {
   }
 
   const editThought = async function () {
-    return await fetch('http://localhost:3000/thoughts', {
+    return await fetch('http://172.31.29.117:3000/thoughts', {
       method: 'PUT',
       credentials: 'same-origin', // include, *same-origin, omit
       headers: {

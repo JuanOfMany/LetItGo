@@ -12,7 +12,7 @@ export default function App () {
 
     useEffect(() => {
         myAudio.play();
-        fetch('http://localhost:3000/thoughts')
+        fetch('http://172.31.29.117:3000/thoughts')
         .then(response => response.json())
         .then((data) => setThoughts(data))
 
